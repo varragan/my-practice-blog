@@ -6,15 +6,12 @@
         <div>
             <h1><a href="/">Practice Blog</a></h1>
         </div>
-
-        <div>
-            <p>published: 13.05.2019, 15:35</p>
-            <h2><a href="">First Post</a></h2>
-        </div>
-
-        <div>
-            <p>公開日: 2019/05/13, 15:35</p>
-            <h2><a href="">2つ目の投稿</a></h2>
-        </div>
+        {% for post in posts %}
+            <div>
+                <p>publish: {{ post.published_date }}</p>
+                <h1><a href="">{{ post.title }}</a><h1>
+                <p>{{ post.text | linebreaksbr }}</p>
+            </div>
+        {% endfor %}
     </body>
 </html>
